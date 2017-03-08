@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">AppLinkSample</string>
+    <string name="app_scheme">applinksample</string>
+    <string name="cappta_auth_key">2C1CE88C-6A0C-4FA6-BF2D-519B1DB31DF4</string>
+
+    <!-- activity_main -->
+
+    <string name="button_payment">Realizar Pagamento</string>
+    <string name="button_receipt_reprint">Realizar Reimpressão</string>
+    <string name="button_payment_reversal">Realizar Estorno de Pagamento</string>
+
+    <!-- activity_payment -->
+
+    <string name="label_payment_amount">Valor do pagamento:</string>
+    <string name="select_payment_product">Selecione a modalidade:</string>
+    <string name="button_send_payment">Enviar Pagamento</string>
+
+    <!-- activity_payment_reversal -->
+
+    <string name="label_administrative_code">Número de Controle</string>
+    <string name="label_administrative_password">Senha administrativa</string>
+    <string name="button_send_reversal">Enviar Cancelamento</string>
+
+    <!-- activity_receipt_reprint -->
+
+    <string name="button_reprint_specific">Reimprimir Específico</string>
+    <string name="button_reprint_last_receipt">Reimprimir o Último</string>
+
+    <!-- activity_result -->
+
+    <string name="label_operation_completed">Operação Concluída!</string>
+
+    <!-- generic messages -->
+
+    <string name="label_request_id">Id do requisição:</string>
+    <string name="button_back">Voltar</string>
+</resources>

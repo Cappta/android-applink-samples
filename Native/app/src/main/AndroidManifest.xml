@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cappta.applinksample">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".activities.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.PaymentActivity" />
+        <activity android:name=".activities.AdministrativeTaskActivity" />
+        <activity android:name=".activities.ResultActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="cappta-response"
+                    android:scheme="applinksample" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".activities.ReceiptReprintActivity" />
+        <activity android:name=".activities.PaymentReversalActivity"></activity>
+    </application>
+
+</manifest>
