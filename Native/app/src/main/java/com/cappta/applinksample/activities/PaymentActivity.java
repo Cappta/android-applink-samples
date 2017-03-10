@@ -41,7 +41,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
 
         EditText paymentAmountInput = (EditText)this.findViewById(R.id.payment_amount);
         float paymentAmount = Float.parseFloat(paymentAmountInput.getText().toString());
-        int paymentAmountInCents = (int)(paymentAmount * 100);
+        int paymentAmountInCents = Math.round(paymentAmount * 100);
 
         Uri capptaAppLink = new Uri.Builder()
             .scheme("cappta")
