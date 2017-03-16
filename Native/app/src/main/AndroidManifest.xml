@@ -8,6 +8,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -15,8 +16,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".activities.PaymentActivity" />
-        <activity android:name=".activities.AdministrativeTaskActivity" />
+        <activity android:name=".activities.PaymentReversalActivity" />
+        <activity android:name=".activities.ReceiptReprintActivity" />
+
         <activity android:name=".activities.ResultActivity">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
@@ -24,13 +28,13 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data
-                    android:host="cappta-response"
-                    android:scheme="applinksample" />
+                <data android:scheme="applinksample" android:host="payment"  />
+                <data android:scheme="applinksample" android:host="payment-reversal"  />
+                <data android:scheme="applinksample" android:host="receipt-reprint"  />
+
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ReceiptReprintActivity" />
-        <activity android:name=".activities.PaymentReversalActivity"></activity>
+
     </application>
 
 </manifest>
