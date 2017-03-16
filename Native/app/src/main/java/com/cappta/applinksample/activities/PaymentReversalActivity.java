@@ -31,7 +31,7 @@ public class PaymentReversalActivity extends Activity implements View.OnClickLis
     public void onClick(View view) {
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("cappta");
-        builder.authority("paymentReversal");
+        builder.authority("payment-reversal");
         builder.appendQueryParameter("authKey", getString(R.string.cappta_auth_key));
         builder.appendQueryParameter("scheme", getString(R.string.app_scheme));
 

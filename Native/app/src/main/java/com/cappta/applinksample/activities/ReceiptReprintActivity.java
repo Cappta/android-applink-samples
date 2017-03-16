@@ -33,7 +33,7 @@ public class ReceiptReprintActivity extends Activity implements View.OnClickList
     public void onClick(View view) {
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("cappta");
-        builder.authority("receiptReprint");
+        builder.authority("receipt-reprint");
         builder.appendQueryParameter("authKey", getString(R.string.cappta_auth_key));
         builder.appendQueryParameter("scheme", getString(R.string.app_scheme));
 
