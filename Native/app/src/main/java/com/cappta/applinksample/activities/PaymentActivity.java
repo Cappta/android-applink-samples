@@ -37,6 +37,8 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
+        EditText paymentId = (EditText)this.findViewById(R.id.payment_id);
+
         PaymentProduct paymentProduct = (PaymentProduct)this.paymentProductSpinner.getSelectedItem();
 
         EditText paymentAmountInput = (EditText)this.findViewById(R.id.payment_amount);
@@ -47,6 +49,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
             .scheme("cappta")
             .authority("payment")
             .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
+            .appendQueryParameter("paymentId", paymentId.getText().toString())
             .appendQueryParameter("paymentProduct", Integer.toString(paymentProduct.getValue()))
             .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
             .appendQueryParameter("scheme", getString(R.string.app_scheme))

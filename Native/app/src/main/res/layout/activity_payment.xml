@@ -26,6 +26,19 @@
         android:text="1.00" />
 
     <TextView
+        android:text="@string/label_payment_id"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/payment_id"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="123456"/>
+
+    <TextView
         android:text="Modalidade"
         android:textSize="20dp"
         android:layout_width="match_parent"
