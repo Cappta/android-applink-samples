@@ -50,7 +50,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
             .authority("payment")
             .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
             .appendQueryParameter("paymentId", paymentId.getText().toString())
-            .appendQueryParameter("paymentProduct", Integer.toString(paymentProduct.getValue()))
+            .appendQueryParameter("paymentType", paymentProduct.getValue())
             .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
             .appendQueryParameter("scheme", getString(R.string.app_scheme))
             .build();
