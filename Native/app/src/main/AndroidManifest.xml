@@ -8,7 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity android:name=".activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -16,10 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".activities.PaymentActivity" />
         <activity android:name=".activities.PaymentReversalActivity" />
         <activity android:name=".activities.ReceiptReprintActivity" />
+
+        <activity android:name=".activities.ConfigurationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="configuration"
+                    android:scheme="applinksample" />
+            </intent-filter>
+        </activity>
 
         <activity android:name=".activities.ResultActivity">
             <intent-filter>
@@ -28,10 +39,15 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="applinksample" android:host="payment"  />
-                <data android:scheme="applinksample" android:host="payment-reversal"  />
-                <data android:scheme="applinksample" android:host="receipt-reprint"  />
-
+                <data
+                    android:host="payment"
+                    android:scheme="applinksample" />
+                <data
+                    android:host="payment-reversal"
+                    android:scheme="applinksample" />
+                <data
+                    android:host="receipt-reprint"
+                    android:scheme="applinksample" />
             </intent-filter>
         </activity>
 

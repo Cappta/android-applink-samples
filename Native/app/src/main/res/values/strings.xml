@@ -8,6 +8,7 @@
     <string name="button_payment">Realizar Pagamento</string>
     <string name="button_receipt_reprint">Realizar Reimpressão</string>
     <string name="button_payment_reversal">Realizar Estorno de Pagamento</string>
+    <string name="button_configuration">Realizar Configuração do PDV</string>
 
     <!-- activity_payment -->
 
@@ -29,6 +30,13 @@
     <string name="button_reprint_specific">Reimprimir Específico</string>
     <string name="button_reprint_last_receipt">Reimprimir o Último</string>
 
+    <!-- activity_configuration -->
+
+    <string name="label_cnpj">CNPJ</string>
+    <string name="label_checkout_number">PDV</string>
+
+    <string name="button_send_configuration">Configurar PDV</string>
+
     <!-- activity_result -->
 
     <string name="label_operation_completed">Operação Concluída!</string>
@@ -37,4 +45,5 @@
 
     <string name="label_request_id">Id do requisição:</string>
     <string name="button_back">Voltar</string>
+    <string name="title_activity_configuration">ConfigurationActivity</string>
 </resources>

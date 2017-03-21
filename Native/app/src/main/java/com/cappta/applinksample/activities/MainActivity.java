@@ -23,6 +23,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Button buttonReceiptReprint = (Button)this.findViewById(R.id.button_receipt_reprint);
         buttonReceiptReprint.setOnClickListener(this);
+
+        Button buttonConfiguration = (Button)this.findViewById(R.id.button_configuration);
+        buttonConfiguration.setOnClickListener(this);
     }
 
     @Override
@@ -37,6 +40,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.button_payment_reversal:
                 startActivity(PaymentReversalActivity.class);
+                break;
+            case R.id.button_configuration:
+                startActivity(ConfigurationActivity.class);
                 break;
         }
     }

@@ -29,4 +29,10 @@
         android:layout_width="match_parent"
         android:text="@string/button_payment_reversal" />
 
+    <Button
+        android:id="@+id/button_configuration"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:text="@string/button_configuration" />
+
 </LinearLayout>
