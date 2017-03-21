@@ -46,6 +46,8 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
         float paymentAmount = Float.parseFloat(paymentAmountInput.getText().toString());
         int paymentAmountInCents = Math.round(paymentAmount * 100);
 
+        EditText installments = (EditText)this.findViewById(R.id.installments);
+
         Uri capptaAppLink = new Uri.Builder()
             .scheme("cappta")
             .authority("payment")
@@ -53,6 +55,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
             .appendQueryParameter("paymentId", paymentId.getText().toString())
             .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
             .appendQueryParameter("paymentType", paymentType.getValue())
+            .appendQueryParameter("installments", installments.getText().toString())
             .appendQueryParameter("scheme", getString(R.string.app_scheme))
             .build();
 
