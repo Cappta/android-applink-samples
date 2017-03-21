@@ -5,41 +5,42 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 
 import com.cappta.applinksample.R;
-import com.cappta.applinksample.model.PaymentProduct;
+import com.cappta.applinksample.model.PaymentType;
 
 public class PaymentActivity extends Activity implements View.OnClickListener {
-
-    private Spinner paymentProductSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
 
-        Button sendPaymentButton = (Button)this.findViewById(R.id.button_send_payment);
-        sendPaymentButton.setOnClickListener(this);
+        Button sendCreditPaymentButton = (Button)this.findViewById(R.id.button_send_credit_payment);
+        sendCreditPaymentButton.setOnClickListener(this);
 
-        this.paymentProductSpinner = (Spinner)this.findViewById(R.id.payment_product);
-        paymentProductSpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, PaymentProduct.values()));
-    }
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
+        Button sendDebitPaymentButton = (Button)this.findViewById(R.id.button_send_debit_payment);
+        sendDebitPaymentButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View view) {
-        EditText paymentId = (EditText)this.findViewById(R.id.payment_id);
 
-        PaymentProduct paymentProduct = (PaymentProduct)this.paymentProductSpinner.getSelectedItem();
+        switch (view.getId())
+        {
+            case R.id.button_send_credit_payment:
+                SendPayment(PaymentType.CREDIT);
+                break;
+            case R.id.button_send_debit_payment:
+                SendPayment(PaymentType.DEBIT);
+                break;
+        }
+    }
+
+    private void SendPayment(PaymentType paymentType) {
+        EditText paymentId = (EditText)this.findViewById(R.id.payment_id);
 
         EditText paymentAmountInput = (EditText)this.findViewById(R.id.payment_amount);
         float paymentAmount = Float.parseFloat(paymentAmountInput.getText().toString());
@@ -50,8 +51,8 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
             .authority("payment")
             .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
             .appendQueryParameter("paymentId", paymentId.getText().toString())
-            .appendQueryParameter("paymentType", paymentProduct.getValue())
             .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
+            .appendQueryParameter("paymentType", paymentType.getValue())
             .appendQueryParameter("scheme", getString(R.string.app_scheme))
             .build();
 

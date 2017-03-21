@@ -13,8 +13,8 @@
 
     <string name="label_payment_amount">Valor do pagamento:</string>
     <string name="label_payment_id">Id do pagamento:</string>
-    <string name="select_payment_product">Selecione a modalidade:</string>
-    <string name="button_send_payment">Enviar Pagamento</string>
+    <string name="button_send_credit_payment">Pagamento Crédito</string>
+    <string name="button_send_debit_payment">Pagamento Débito</string>
 
     <!-- activity_payment_reversal -->
 

@@ -12,6 +12,19 @@
     tools:context="com.cappta.applinksample.activities.PaymentActivity">
 
     <TextView
+        android:text="@string/label_payment_id"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/payment_id"
+        android:inputType="number"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="123456" />
+
+    <TextView
         android:text="@string/label_payment_amount"
         android:textSize="20dp"
         android:layout_width="match_parent"
@@ -26,34 +39,24 @@
         android:text="1.00" />
 
     <TextView
-        android:text="@string/label_payment_id"
+        android:text="@string/label_installments"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/payment_id"
-        android:inputType="number"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="123456"/>
-
-    <TextView
-        android:text="Modalidade"
-        android:textSize="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
-    <Spinner
-        android:id="@+id/payment_product"
-        android:prompt="@string/select_payment_product"
         android:layout_width="match_parent"
         android:layout_height="60dp" />
 
     <Button
-        android:id="@+id/button_send_payment"
+        android:id="@+id/button_send_credit_payment"
         android:layout_height="60dp"
         android:layout_width="match_parent"
-        android:text="@string/button_send_payment" />
+        android:text="@string/button_send_credit_payment" />
+
+    <Button
+        android:id="@+id/button_send_debit_payment"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:text="@string/button_send_debit_payment" />
 
 </LinearLayout>

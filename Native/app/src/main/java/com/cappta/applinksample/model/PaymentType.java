@@ -1,6 +1,6 @@
 package com.cappta.applinksample.model;
 
-public enum PaymentProduct {
+public enum PaymentType {
 
     CREDIT("credit", "Crédito"),
     DEBIT("debit", "Débito");
@@ -9,7 +9,7 @@ public enum PaymentProduct {
 
     private String displayName;
 
-    private PaymentProduct(String value, String displayName) {
+    private PaymentType(String value, String displayName) {
         this.value = value;
         this.displayName = displayName;
     }
