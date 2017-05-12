@@ -5,18 +5,26 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 
 import com.cappta.applinksample.R;
+import com.cappta.applinksample.model.InstallmentType;
 import com.cappta.applinksample.model.PaymentType;
 
 public class PaymentActivity extends Activity implements View.OnClickListener {
+
+    private Spinner installmentTypeSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+
+        this.installmentTypeSpinner = (Spinner)this.findViewById(R.id.installment_type);
+        installmentTypeSpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, InstallmentType.values()));
 
         Button sendCreditPaymentButton = (Button)this.findViewById(R.id.button_send_credit_payment);
         sendCreditPaymentButton.setOnClickListener(this);
@@ -48,6 +56,8 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
 
         EditText installments = (EditText)this.findViewById(R.id.installments);
 
+        InstallmentType installmentType = (InstallmentType)this.installmentTypeSpinner.getSelectedItem();
+
         Uri capptaAppLink = new Uri.Builder()
             .scheme("cappta")
             .authority("payment")
@@ -56,6 +66,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
             .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
             .appendQueryParameter("paymentType", paymentType.getValue())
             .appendQueryParameter("installments", installments.getText().toString())
+            .appendQueryParameter("installmentType", Integer.toString(installmentType.getValue()))
             .appendQueryParameter("scheme", getString(R.string.app_scheme))
             .build();
 

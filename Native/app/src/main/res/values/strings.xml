@@ -15,6 +15,8 @@
     <string name="label_payment_amount">Valor do pagamento:</string>
     <string name="label_payment_id">Id do pagamento:</string>
     <string name="label_installments">Qtd. Parcelas:</string>
+    <string name="label_installment_type">Tipo de parcelamento:</string>
+    <string name="prompt_installment_type">Selecione</string>
 
     <string name="button_send_credit_payment">Pagamento Crédito</string>
     <string name="button_send_debit_payment">Pagamento Débito</string>
