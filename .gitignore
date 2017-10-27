@@ -13,6 +13,7 @@
 /build
 /captures
 .externalNativeBuild
+.idea/
 
 # Files for the ART/Dalvik VM
 *.dex

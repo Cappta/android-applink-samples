@@ -9,7 +9,8 @@ This sample explain how integrate with Cappta applink solution
 - Reversal
 - Print receipt
 
-
+---
+### License
 ```
 The MIT License (MIT)
 
