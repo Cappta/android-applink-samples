@@ -1,7 +1,7 @@
 # Android applink
 
 ### Demo
-This sample explain how integrate with Cappta applink solution
+This sample explain how to integrate with Cappta applink solution
 
 ### Features
 - Activation
