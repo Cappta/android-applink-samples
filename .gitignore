@@ -3,6 +3,17 @@
 *.apk
 *.ap_
 
+# default
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
 # Files for the ART/Dalvik VM
 *.dex
 
