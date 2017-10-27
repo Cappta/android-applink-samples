@@ -1,57 +1,47 @@
 package com.cappta.applinksample.activities;
 
-import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
-
 import com.cappta.applinksample.R;
 
-public class ResultActivity extends Activity implements View.OnClickListener {
+public class ResultActivity extends BaseActivity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        try
-        {
-            super.onCreate(savedInstanceState);
-            this.setContentView(R.layout.activity_result);
+  @Override protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    try {
 
-            Uri appLinkUri = Uri.parse(this.getIntent().getDataString()) ;
+      setContentView(R.layout.activity_result);
 
-            String responseCode = appLinkUri.getQueryParameter("responseCode");
+      Uri appLinkUri = Uri.parse(getIntent().getDataString());
 
-            if (responseCode.equals("0")) {
-                this.showReceipts(appLinkUri);
+      String responseCode = appLinkUri.getQueryParameter("responseCode");
 
-                Button buttonBack = (Button) this.findViewById(R.id.button_back);
-                buttonBack.setOnClickListener(this);
+      if (responseCode.equals("0")) {
+        this.showReceipts(appLinkUri);
+        addListener(R.id.button_back);
 
-            } else {
-                String reason = appLinkUri.getQueryParameter("reason");
-                Toast.makeText(this, reason, Toast.LENGTH_LONG).show();
-
-                this.finish();
-            }
-        }
-        catch (Exception e) {
-            Toast.makeText(this, e.getMessage(), Toast.LENGTH_LONG).show();
-            this.finish();
-        }
+      } else {
+        String reason = appLinkUri.getQueryParameter("reason");
+        toast(reason);
+        finish();
+      }
+    } catch (Exception e) {
+      toast(e.getMessage());
+      this.finish();
     }
+  }
 
-    private void showReceipts(Uri appLinkUri) {
-        TextView cupomLojista = (TextView) this.findViewById(R.id.via_lojista);
-        TextView cupomCliente = (TextView) this.findViewById(R.id.via_cliente);
+  private void showReceipts(Uri appLinkUri) {
+    TextView cupomLojista = (TextView) findViewById(R.id.via_lojista);
+    TextView cupomCliente = (TextView) findViewById(R.id.via_cliente);
 
-        cupomLojista.setText(appLinkUri.getQueryParameter("merchantReceipt"));
-        cupomCliente.setText(appLinkUri.getQueryParameter("customerReceipt"));
-    }
+    cupomLojista.setText(appLinkUri.getQueryParameter("merchantReceipt"));
+    cupomCliente.setText(appLinkUri.getQueryParameter("customerReceipt"));
+  }
 
-    @Override
-    public void onClick(View view) {
-        this.finish();
-    }
+  @Override public void onClick(View view) {
+    finish();
+  }
 }
