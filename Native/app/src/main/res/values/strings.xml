@@ -36,7 +36,6 @@
 
     <string name="label_cnpj">CNPJ</string>
     <string name="label_checkout_number">PDV</string>
-
     <string name="button_send_configuration">Configurar PDV</string>
 
     <!-- activity_result -->
@@ -48,4 +47,13 @@
     <string name="label_request_id">Id do requisição:</string>
     <string name="button_back">Voltar</string>
     <string name="title_activity_configuration">ConfigurationActivity</string>
+
+    <!-- activity_tokenization-->
+
+    <string name="button_tokenization">Tokenização</string>
+    <string name="button_payment_with_token_creation">Pagamento com criação de token</string>
+    <string name="button_token_creation">Criação de token</string>
+    <string name="button_token_payment_transaction">Pagamento com token</string>
+    <string name="button_token_cancellation_transaction">Cancelar transação com token</string>
+
 </resources>

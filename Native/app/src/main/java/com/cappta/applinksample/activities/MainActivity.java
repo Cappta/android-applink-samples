@@ -26,6 +26,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Button buttonConfiguration = (Button)this.findViewById(R.id.button_configuration);
         buttonConfiguration.setOnClickListener(this);
+
+        Button buttonTokenization = (Button)this.findViewById(R.id.button_tokenization);
+        buttonTokenization.setOnClickListener(this);
     }
 
     @Override

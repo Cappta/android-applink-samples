@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,36 +10,30 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.cappta.applinksample.activities.MainActivity">
+    tools:context="com.cappta.applinksample.activities.TokenizationActivity">
 
     <Button
-        android:id="@+id/button_payment"
+        android:id="@+id/button_payment_with_token_creation"
         android:layout_height="60dp"
         android:layout_width="match_parent"
-        android:text="@string/button_payment" />
+        android:text="@string/button_payment_with_token_creation" />
 
     <Button
-        android:id="@+id/button_receipt_reprint"
+        android:id="@+id/button_token_creation"
         android:layout_height="60dp"
         android:layout_width="match_parent"
-        android:text="@string/button_receipt_reprint" />
+        android:text="@string/button_token_creation" />
 
     <Button
-        android:id="@+id/button_payment_reversal"
+        android:id="@+id/button_token_payment"
         android:layout_height="60dp"
         android:layout_width="match_parent"
-        android:text="@string/button_payment_reversal" />
+        android:text="@string/button_token_payment_transaction" />
 
     <Button
-        android:id="@+id/button_configuration"
+        android:id="@+id/button_cancel_token_payment"
         android:layout_height="60dp"
         android:layout_width="match_parent"
-        android:text="@string/button_configuration" />
-
-    <Button
-        android:id="@+id/button_tokenization"
-        android:layout_height="60dp"
-        android:layout_width="match_parent"
-        android:text="@string/button_tokenization" />
+        android:text="@string/button_token_cancellation_transaction" />
 
 </LinearLayout>
