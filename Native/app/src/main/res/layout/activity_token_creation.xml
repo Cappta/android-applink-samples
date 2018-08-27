@@ -30,7 +30,7 @@
         android:layout_height="wrap_content" />
 
     <Spinner
-        android:id="@+id/installment_type"
+        android:id="@+id/document_type"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:prompt="@string/prompt_installment_type" />
