@@ -12,19 +12,19 @@
     tools:context="com.cappta.applinksample.activities.TokenCreationActivity">
 
     <TextView
-        android:text="Nome do Cliente"
+        android:text="@string/label_customer_name"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/customerName"
+        android:id="@+id/customer_name"
         android:inputType="text"
         android:layout_width="match_parent"
         android:layout_height="60dp"/>
 
     <TextView
-        android:text="Tipo do documento"
+        android:text="@string/label_document_type"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -36,27 +36,27 @@
         android:prompt="@string/prompt_installment_type" />
 
     <TextView
-        android:text="CPF ou CNPJ do cliente"
+        android:text="@string/document_type"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/customerDocument"
+        android:id="@+id/customer_Document"
         android:inputType="number"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:text="" />
+        />
 
     <TextView
-        android:text="Email"
+        android:text="@string/label_customer_email"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
     <EditText
-        android:id="@+id/customerEmail"
+        android:id="@+id/customer_Email"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:inputType="text" />
@@ -65,7 +65,7 @@
         android:id="@+id/executeCreateToken"
         android:layout_height="60dp"
         android:layout_width="match_parent"
-        android:text="Executar Operação" />
+        android:text="@string/execute_operation_button" />
 
 
 </LinearLayout>
