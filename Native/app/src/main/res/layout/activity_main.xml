@@ -35,4 +35,10 @@
         android:layout_width="match_parent"
         android:text="@string/button_configuration" />
 
+    <Button
+        android:id="@+id/button_tokenization"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:text="Tokenização" />
+
 </LinearLayout>
