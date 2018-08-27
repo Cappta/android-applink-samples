@@ -24,7 +24,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
         setContentView(R.layout.activity_payment);
 
         this.installmentTypeSpinner = (Spinner)this.findViewById(R.id.installment_type);
-        installmentTypeSpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, InstallmentType.values()));
+        this.installmentTypeSpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, InstallmentType.values()));
 
         Button sendCreditPaymentButton = (Button)this.findViewById(R.id.button_send_credit_payment);
         sendCreditPaymentButton.setOnClickListener(this);
