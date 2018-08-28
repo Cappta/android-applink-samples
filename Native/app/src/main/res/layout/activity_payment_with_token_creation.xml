@@ -3,78 +3,137 @@
     xmlns:tols="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tols:context="com.cappta.applinksample.activities.PaymentWithTokenCreationActivity">
 
-    <TextView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/label_payment_id"
-        android:textSize="20dp" />
+        android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/payment_id"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="number"
-        android:text="123456" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="16dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="16dp">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/label_payment_amount"
-        android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_payment_id"
+                android:textSize="20dp" />
 
-    <EditText
-        android:id="@+id/paymentAmount"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="1.0" />
+            <EditText
+                android:id="@+id/payment_id"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="number"
+                android:text="123456" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/label_installments"
-        android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_payment_amount"
+                android:textSize="20dp" />
 
-    <EditText
-        android:id="@+id/installments"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:ems="10"
-        android:inputType="number" />
+            <EditText
+                android:id="@+id/paymentAmount"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:text="1.0" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/label_installment_type"
-        android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_installments"
+                android:textSize="20dp" />
 
-    <Spinner
-        android:id="@+id/installment_type"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:prompt="@string/prompt_installment_type" />
+            <EditText
+                android:id="@+id/installments"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="number" />
 
-    <Button
-        android:id="@+id/button_send_credit_payment"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/button_send_credit_payment" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_installment_type"
+                android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/button_send_debit_payment"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:text="@string/button_send_debit_payment" />
+            <Spinner
+                android:id="@+id/installment_type"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:prompt="@string/prompt_installment_type" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nome"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/nameInput"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="textEmailAddress|textPersonName"
+                android:text="nome"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/emailInput"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="email"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Documento"
+                android:textSize="20dp" />
+
+            <EditText
+                android:id="@+id/documentInput"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:ems="10"
+                android:inputType="textPersonName|number"
+                android:text="Name" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tipo do Documento"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/document_type"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+
+            <Button
+                android:id="@+id/button_send_credit_payment"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:text="@string/button_send_credit_payment" />
+        </LinearLayout>
+    </ScrollView>
 
 
 </LinearLayout>

@@ -40,9 +40,6 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
             case R.id.button_send_credit_payment:
                 SendPayment(PaymentType.CREDIT);
                 break;
-            case R.id.button_send_debit_payment:
-                SendPayment(PaymentType.DEBIT);
-                break;
         }
     }
 
@@ -57,15 +54,27 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
 
         InstallmentType installmentType = (InstallmentType)this.installmentTypeSpinner.getSelectedItem();
 
+        EditText cardholderNameInput = (EditText)this.findViewById(R.id.nameInput);
+        String cardholderName = cardholderNameInput.getText().toString();
+
+        EditText cardholderEmailInput = (EditText)this.findViewById(R.id.emailInput);
+        String cardholderEmail = cardholderEmailInput.getText().toString();
+
+        EditText cardholderDocumentInput = (EditText)this.findViewById(R.id.documentInput);
+        String cardholderDocument = cardholderDocumentInput.getText().toString();
+
         Uri capptaAppLink = new Uri.Builder()
                 .scheme("cappta")
-                .authority("payment")
+                .authority("paymentWithTokenCreation")
                 .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
                 .appendQueryParameter("paymentId", paymentId.getText().toString())
                 .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
                 .appendQueryParameter("paymentType", paymentType.getValue())
                 .appendQueryParameter("installments", installments.getText().toString())
                 .appendQueryParameter("installmentType", Integer.toString(installmentType.getValue()))
+                .appendQueryParameter("cardholderName", cardholderName)
+                .appendQueryParameter("cardholderEmail", cardholderEmail)
+                .appendQueryParameter("cardholderDocument", cardholderDocument)
                 .appendQueryParameter("scheme", getString(R.string.app_scheme))
                 .build();
 
