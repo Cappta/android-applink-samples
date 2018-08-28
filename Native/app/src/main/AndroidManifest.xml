@@ -32,7 +32,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.TokenizationActivity"/>
+        <activity android:name=".activities.TokenizationActivity">
+        </activity>
+        <activity android:name=".activities.TokenCreationActivity"/>
 
         <activity android:name=".activities.ResultActivity">
             <intent-filter>

@@ -56,4 +56,13 @@
     <string name="button_token_payment_transaction">Pagamento com token</string>
     <string name="button_token_cancellation_transaction">Cancelar transação com token</string>
 
+    <!--activity_token_creation-->
+    <string name="label_customer_name">Nome do Cliente</string>
+    <string name="label_document_type">Tipo do documento</string>
+    <string name="document_type">CPF ou CNPJ do cliente</string>
+    <string name="label_customer_email">Email</string>
+
+    <!-- Execute Operation Button-->
+    <string name="execute_operation_button">Executar Operação</string>
+
 </resources>
