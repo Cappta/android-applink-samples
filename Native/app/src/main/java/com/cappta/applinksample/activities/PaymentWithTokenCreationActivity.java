@@ -1,9 +1,9 @@
 package com.cappta.applinksample.activities;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.app.Activity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,14 +14,14 @@ import com.cappta.applinksample.R;
 import com.cappta.applinksample.model.InstallmentType;
 import com.cappta.applinksample.model.PaymentType;
 
-public class PaymentActivity extends Activity implements View.OnClickListener {
+public class PaymentWithTokenCreationActivity extends Activity implements View.OnClickListener {
 
     private Spinner installmentTypeSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment);
+        setContentView(R.layout.activity_payment_with_token_creation);
 
         this.installmentTypeSpinner = (Spinner)this.findViewById(R.id.installment_type);
         installmentTypeSpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, InstallmentType.values()));
@@ -36,8 +36,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
 
-        switch (view.getId())
-        {
+        switch (view.getId()) {
             case R.id.button_send_credit_payment:
                 SendPayment(PaymentType.CREDIT);
                 break;
@@ -47,7 +46,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
         }
     }
 
-    private void SendPayment(PaymentType paymentType) {
+    private void SendPayment(PaymentType paymentType){
         EditText paymentId = (EditText)this.findViewById(R.id.payment_id);
 
         EditText paymentAmountInput = (EditText)this.findViewById(R.id.payment_amount);
@@ -59,19 +58,20 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
         InstallmentType installmentType = (InstallmentType)this.installmentTypeSpinner.getSelectedItem();
 
         Uri capptaAppLink = new Uri.Builder()
-            .scheme("cappta")
-            .authority("payment")
-            .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
-            .appendQueryParameter("paymentId", paymentId.getText().toString())
-            .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
-            .appendQueryParameter("paymentType", paymentType.getValue())
-            .appendQueryParameter("installments", installments.getText().toString())
-            .appendQueryParameter("installmentType", Integer.toString(installmentType.getValue()))
-            .appendQueryParameter("scheme", getString(R.string.app_scheme))
-            .build();
+                .scheme("cappta")
+                .authority("payment")
+                .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
+                .appendQueryParameter("paymentId", paymentId.getText().toString())
+                .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
+                .appendQueryParameter("paymentType", paymentType.getValue())
+                .appendQueryParameter("installments", installments.getText().toString())
+                .appendQueryParameter("installmentType", Integer.toString(installmentType.getValue()))
+                .appendQueryParameter("scheme", getString(R.string.app_scheme))
+                .build();
 
         Intent capptaIntent = new Intent(Intent.ACTION_VIEW, capptaAppLink);
 
         this.startActivityForResult(capptaIntent,  0);
     }
+
 }

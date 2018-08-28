@@ -37,6 +37,9 @@ public class TokenizationActivity extends Activity implements View.OnClickListen
             case R.id.button_token_creation:
                 startActivity(ReceiptReprintActivity.class);
                 break;
+            case R.id.button_payment_with_token_creation:
+                startActivity(PaymentWithTokenCreationActivity.class);
+                break;
         }
     }
 

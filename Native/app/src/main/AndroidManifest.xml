@@ -53,6 +53,10 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".activities.PaymentWithTokenCreationActivity">
+
+        </activity>
+
     </application>
 
 </manifest>
