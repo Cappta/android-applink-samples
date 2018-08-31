@@ -11,12 +11,15 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.cappta.applinksample.R;
+import com.cappta.applinksample.model.DocumentType;
 import com.cappta.applinksample.model.InstallmentType;
 import com.cappta.applinksample.model.PaymentType;
 
 public class PaymentWithTokenCreationActivity extends Activity implements View.OnClickListener {
 
     private Spinner installmentTypeSpinner;
+
+    private Spinner documentTypeSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +29,11 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
         this.installmentTypeSpinner = (Spinner)this.findViewById(R.id.installment_type);
         installmentTypeSpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, InstallmentType.values()));
 
+        this.documentTypeSpinner = (Spinner)this.findViewById(R.id.document_type);
+        documentTypeSpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, DocumentType.values()));
+
         Button sendCreditPaymentButton = (Button)this.findViewById(R.id.button_send_credit_payment);
         sendCreditPaymentButton.setOnClickListener(this);
-
-        Button sendDebitPaymentButton = (Button)this.findViewById(R.id.button_send_debit_payment);
-        sendDebitPaymentButton.setOnClickListener(this);
     }
 
     @Override
@@ -63,6 +66,8 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
         EditText cardholderDocumentInput = (EditText)this.findViewById(R.id.documentInput);
         String cardholderDocument = cardholderDocumentInput.getText().toString();
 
+        DocumentType documentType = (DocumentType)this.documentTypeSpinner.getSelectedItem();
+
         Uri capptaAppLink = new Uri.Builder()
                 .scheme("cappta")
                 .authority("paymentWithTokenCreation")
@@ -75,10 +80,11 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
                 .appendQueryParameter("cardholderName", cardholderName)
                 .appendQueryParameter("cardholderEmail", cardholderEmail)
                 .appendQueryParameter("cardholderDocument", cardholderDocument)
+                .appendQueryParameter("documentType", Integer.toString(documentType.getValue()))
                 .appendQueryParameter("scheme", getString(R.string.app_scheme))
                 .build();
 
-        Intent capptaIntent = new Intent(Intent.ACTION_VIEW, capptaAppLink);
+        Intent capptaIntent = new Intent(Intent.ACTION_VIEW, castatuspptaAppLink);
 
         this.startActivityForResult(capptaIntent,  0);
     }

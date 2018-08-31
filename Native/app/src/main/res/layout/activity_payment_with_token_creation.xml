@@ -40,7 +40,7 @@
                 android:textSize="20dp" />
 
             <EditText
-                android:id="@+id/paymentAmount"
+                android:id="@+id/payment_amount"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:ems="10"
@@ -58,7 +58,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:ems="10"
-                android:inputType="number" />
+                android:inputType="number"
+                android:text="1" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -84,7 +85,7 @@
                 android:layout_height="60dp"
                 android:ems="10"
                 android:inputType="textEmailAddress|textPersonName"
-                android:text="nome"
+                android:text="daniel"
                 android:textSize="18sp" />
 
             <TextView
@@ -99,7 +100,7 @@
                 android:layout_height="60dp"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="email"
+                android:text="dlessio@stone.com.br"
                 android:textSize="18sp" />
 
             <TextView
@@ -114,7 +115,7 @@
                 android:layout_height="60dp"
                 android:ems="10"
                 android:inputType="textPersonName|number"
-                android:text="Name" />
+                android:text="12345678910" />
 
             <TextView
                 android:layout_width="match_parent"
