@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_payment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="com.cappta.applinksample.activities.TokenCreationActivity">
+
+    <TextView
+        android:text="@string/label_payment_amount"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/payment_amount"
+        android:inputType="numberDecimal"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="1.00" />
+
+    <TextView
+        android:text="@string/label_card_token"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/card_token"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"/>
+
+    <TextView
+        android:text="@string/label_order_id"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/order_id"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:text="@string/label_customer_id"
+        android:inputType="text"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/customer_id"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
+
+    <TextView
+        android:text="@string/label_installments"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/installments"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="number" />
+
+    <Button
+        android:id="@+id/executeCreateTokenPayment"
+        android:layout_height="60dp"
+        android:layout_width="match_parent"
+        android:text="@string/execute_operation_button" />
+</LinearLayout>
