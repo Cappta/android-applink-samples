@@ -22,11 +22,11 @@ public class TokenizationActivity extends Activity implements View.OnClickListen
         Button buttonPaymentReversal = (Button)this.findViewById(R.id.button_token_creation);
         buttonPaymentReversal.setOnClickListener(this);
 
-        Button buttonReceiptReprint = (Button)this.findViewById(R.id.button_token_payment);
-        buttonReceiptReprint.setOnClickListener(this);
+        Button buttonTokenPayment = (Button)this.findViewById(R.id.button_token_payment);
+        buttonTokenPayment.setOnClickListener(this);
 
-        Button buttonConfiguration = (Button)this.findViewById(R.id.button_cancel_token_payment);
-        buttonConfiguration.setOnClickListener(this);
+        Button buttonCancelTokenPayment = (Button)this.findViewById(R.id.button_cancel_token_payment);
+        buttonCancelTokenPayment.setOnClickListener(this);
 
     }
 
@@ -37,6 +37,9 @@ public class TokenizationActivity extends Activity implements View.OnClickListen
             case R.id.button_token_creation:
                 startActivity(TokenCreationActivity.class);
                 break;
+
+            case R.id.button_token_payment:
+                startActivity(TokenPaymentActivity.class);
         }
     }
 
