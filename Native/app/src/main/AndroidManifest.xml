@@ -53,6 +53,10 @@
                 <data
                     android:host="receipt-reprint"
                     android:scheme="applinksample" />
+
+                <data
+                    android:host="token-creation"
+                    android:scheme="applinksample" />
             </intent-filter>
         </activity>
 
