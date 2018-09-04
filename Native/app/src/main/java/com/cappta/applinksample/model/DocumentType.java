@@ -1,8 +1,8 @@
 package com.cappta.applinksample.model;
 
 public enum DocumentType {
-    CNPJ(1, "CNPJ"),
-    CPF(2, "CPF");
+    CNPJ(1, "company"),
+    CPF(2, "individual");
 
     private int value;
     private String displayName;

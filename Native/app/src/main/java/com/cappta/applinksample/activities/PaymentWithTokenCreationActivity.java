@@ -80,11 +80,11 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
                 .appendQueryParameter("cardholderName", cardholderName)
                 .appendQueryParameter("cardholderEmail", cardholderEmail)
                 .appendQueryParameter("cardholderDocument", cardholderDocument)
-                .appendQueryParameter("documentType", Integer.toString(documentType.getValue()))
+                .appendQueryParameter("documentType", documentType.toString())
                 .appendQueryParameter("scheme", getString(R.string.app_scheme))
                 .build();
 
-        Intent capptaIntent = new Intent(Intent.ACTION_VIEW, castatuspptaAppLink);
+        Intent capptaIntent = new Intent(Intent.ACTION_VIEW, capptaAppLink);
 
         this.startActivityForResult(capptaIntent,  0);
     }
