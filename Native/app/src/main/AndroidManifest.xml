@@ -32,7 +32,9 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.TokenizationActivity"/>
+        <activity android:name=".activities.TokenizationActivity"/>>        
+        <activity android:name=".activities.TokenCreationActivity"/>
+        <activity android:name=".activities.TokenPaymentActivity"/>
 
         <activity android:name=".activities.ResultActivity">
             <intent-filter>
@@ -53,8 +55,19 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.PaymentWithTokenCreationActivity">
+        <activity android:name=".activities.PaymentWithTokenCreationActivity"/>
 
+        <activity android:name=".activities.ResultTokenization">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="token-payment"
+                    android:scheme="applinksample" />
+            </intent-filter>
         </activity>
 
     </application>

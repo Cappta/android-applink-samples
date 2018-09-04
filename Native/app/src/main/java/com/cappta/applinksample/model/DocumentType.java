@@ -12,8 +12,12 @@ public enum DocumentType {
         this.displayName = displayName;
     }
 
-    public int getValue() {return this.value;}
+    public int getValue() {
+        return this.value;
+    }
 
     @Override
-    public String toString() {return this.displayName;}
+    public String toString() {
+        return this.displayName;
+    }
 }
