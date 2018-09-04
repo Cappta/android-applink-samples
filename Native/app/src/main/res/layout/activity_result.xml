@@ -23,6 +23,12 @@
         android:layout_height="wrap_content"
         android:textAlignment="center" />
 
+    <TextView
+        android:id="@+id/token_response"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center" />
+
     <Button
         android:id="@+id/button_back"
         android:layout_width="match_parent"

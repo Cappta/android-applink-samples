@@ -53,18 +53,15 @@ public class ResultActivity extends Activity implements View.OnClickListener {
         cupomLojista.setText(appLinkUri.getQueryParameter("merchantReceipt"));
         cupomCliente.setText(appLinkUri.getQueryParameter("customerReceipt"));
 
-        if (appLinkUri.toString().contains("token-creation")){
+        if (appLinkUri.toString().contains("token-creation")) {
+            TextView tokenResponse = (TextView) this.findViewById(R.id.token_response);
 
             String message = "name: " + appLinkUri.getQueryParameter("name");
             message += "\n document: " + appLinkUri.getQueryParameter("document");
             message += "\n documentType: " + appLinkUri.getQueryParameter("documentType");
             message += "\n email: " + appLinkUri.getQueryParameter("email");
 
-            AlertDialog.Builder builder = new AlertDialog.Builder(this);
-            builder.setTitle("Customer");
-            builder.setMessage(message);
-            builder.setPositiveButton("OK",null);
-            builder.create().show();
+            tokenResponse.setText(message);
         }
     }
 
