@@ -2,7 +2,10 @@
   <dictionary name="dlessio">
     <words>
       <w>cappta</w>
+      <w>cliente</w>
       <w>cnpj</w>
+      <w>cupom</w>
+      <w>lojista</w>
     </words>
   </dictionary>
 </component>

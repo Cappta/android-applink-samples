@@ -135,6 +135,4 @@
                 android:text="@string/button_send_credit_payment" />
         </LinearLayout>
     </ScrollView>
-
-
 </LinearLayout>

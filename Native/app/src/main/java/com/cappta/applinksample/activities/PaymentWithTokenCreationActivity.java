@@ -70,7 +70,7 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
 
         Uri capptaAppLink = new Uri.Builder()
                 .scheme("cappta")
-                .authority("paymentWithTokenCreation")
+                .authority("payment-and-token-creation")
                 .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
                 .appendQueryParameter("paymentId", paymentId.getText().toString())
                 .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))

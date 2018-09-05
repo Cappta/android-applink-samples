@@ -7,9 +7,9 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="@string/label_operation_completed"
         android:textAlignment="center"
-        android:textSize="20dp"
-        android:text="@string/label_operation_completed" />
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="match_parent"

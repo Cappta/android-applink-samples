@@ -10,14 +10,14 @@ import android.widget.Toast;
 
 import com.cappta.applinksample.R;
 
-public class ResultTokenization extends Activity implements View.OnClickListener {
+public class ResultPaymentWithTokenCreation extends Activity implements View.OnClickListener {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState){
         try
         {
             super.onCreate(savedInstanceState);
-            this.setContentView(R.layout.activity_tokenization_result);
+            this.setContentView(R.layout.activity_payment_with_token_creation_result);
 
             Uri appLinkUri = Uri.parse(this.getIntent().getDataString());
 
@@ -48,19 +48,35 @@ public class ResultTokenization extends Activity implements View.OnClickListener
         cupomCliente.setText(appLinkUri.getQueryParameter("customerReceipt"));
 
         TextView cardToken = (TextView) this.findViewById(R.id.card_token);
-        cardToken.setText(appLinkUri.getQueryParameter("cardToken"));
+        cardToken.setText(appLinkUri.getQueryParameter("card_token"));
 
-        TextView lastDigits = (TextView) this.findViewById(R.id.card_last_digits);
-        lastDigits.setText(appLinkUri.getQueryParameter("cardLastDigits"));
+        TextView cardLastDigits = (TextView) this.findViewById(R.id.card_last_digits);
+        cardLastDigits.setText(appLinkUri.getQueryParameter("customer_card_last_four_digits"));
 
         TextView cardBrandName = (TextView) this.findViewById(R.id.card_brand_name);
-        cardBrandName.setText(appLinkUri.getQueryParameter("cardBrandName"));
+        cardBrandName.setText(appLinkUri.getQueryParameter("card_brand_name"));
 
         TextView cardMonthExp = (TextView) this.findViewById(R.id.card_month_exp);
-        cardMonthExp.setText(appLinkUri.getQueryParameter("cardMonthExp"));
+        cardMonthExp.setText(appLinkUri.getQueryParameter("card_month_exp"));
 
         TextView cardYearExp = (TextView) this.findViewById(R.id.card_year_exp);
-        cardYearExp.setText(appLinkUri.getQueryParameter("cardYearExp"));
+        cardYearExp.setText(appLinkUri.getQueryParameter("card_year_exp"));
+
+        String customerNameValue = appLinkUri.getQueryParameter("customer_name");
+        String customerEmailValue = appLinkUri.getQueryParameter("customer_email");
+        String customerDocNumbervalue = appLinkUri.getQueryParameter("customer_doc_number");
+        String customerDocTypeValue = appLinkUri.getQueryParameter("customer_doc_type");
+
+        String customerDetails =  customerNameValue
+                .concat("\n")
+                .concat(customerEmailValue)
+                .concat("\n")
+                .concat(customerDocNumbervalue)
+                .concat("\n")
+                .concat(customerDocTypeValue);
+
+        TextView customer = (TextView) this.findViewById(R.id.customer_data);
+        customer.setText(customerDetails);
     }
 
     @Override
