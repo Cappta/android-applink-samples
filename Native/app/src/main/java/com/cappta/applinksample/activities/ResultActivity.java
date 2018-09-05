@@ -1,6 +1,7 @@
 package com.cappta.applinksample.activities;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
@@ -29,7 +30,10 @@ public class ResultActivity extends Activity implements View.OnClickListener {
                 Button buttonBack = (Button) this.findViewById(R.id.button_back);
                 buttonBack.setOnClickListener(this);
 
-            } else {
+            }
+
+
+            else {
                 String reason = appLinkUri.getQueryParameter("reason");
                 Toast.makeText(this, reason, Toast.LENGTH_LONG).show();
 
@@ -48,6 +52,17 @@ public class ResultActivity extends Activity implements View.OnClickListener {
 
         cupomLojista.setText(appLinkUri.getQueryParameter("merchantReceipt"));
         cupomCliente.setText(appLinkUri.getQueryParameter("customerReceipt"));
+
+        if (appLinkUri.toString().contains("token-creation")) {
+            TextView tokenResponse = (TextView) this.findViewById(R.id.token_response);
+
+            String message = "name: " + appLinkUri.getQueryParameter("name");
+            message += "\n document: " + appLinkUri.getQueryParameter("document");
+            message += "\n documentType: " + appLinkUri.getQueryParameter("documentType");
+            message += "\n email: " + appLinkUri.getQueryParameter("email");
+
+            tokenResponse.setText(message);
+        }
     }
 
     @Override

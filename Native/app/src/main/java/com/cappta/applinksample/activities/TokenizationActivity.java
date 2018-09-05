@@ -22,12 +22,11 @@ public class TokenizationActivity extends Activity implements View.OnClickListen
         Button buttonPaymentReversal = (Button)this.findViewById(R.id.button_token_creation);
         buttonPaymentReversal.setOnClickListener(this);
 
-        Button buttonReceiptReprint = (Button)this.findViewById(R.id.button_token_payment);
-        buttonReceiptReprint.setOnClickListener(this);
+        Button buttonTokenPayment = (Button)this.findViewById(R.id.button_token_payment);
+        buttonTokenPayment.setOnClickListener(this);
 
-        Button buttonConfiguration = (Button)this.findViewById(R.id.button_cancel_token_payment);
+        Button buttonConfiguration = (Button)this.findViewById(R.id.button_token_payment_reversal);
         buttonConfiguration.setOnClickListener(this);
-
     }
 
     @Override
@@ -35,8 +34,14 @@ public class TokenizationActivity extends Activity implements View.OnClickListen
         switch (view.getId())
         {
             case R.id.button_token_creation:
-                startActivity(TokenCreationActivity.class);
+            startActivity(TokenCreationActivity.class);
+            break;
+            case R.id.button_token_payment_reversal:
+                startActivity(TokenPaymentReversalActivity.class);
                 break;
+
+            case R.id.button_token_payment:
+                startActivity(TokenPaymentActivity.class);
         }
     }
 
