@@ -22,8 +22,7 @@
         android:id="@+id/token_payment_reversal_key"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:inputType="text"
-        android:text="ch_ZnxzdElUvwIPX9Np" />
+        android:inputType="text" />
 
     <Button
         android:id="@+id/executeTokenPaymentReversal"
