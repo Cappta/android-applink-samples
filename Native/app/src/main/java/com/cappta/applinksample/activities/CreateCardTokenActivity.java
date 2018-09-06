@@ -15,14 +15,14 @@ import com.cappta.applinksample.model.DocumentType;
 import com.cappta.applinksample.R;
 
 
-public class TokenCreationActivity extends Activity implements View.OnClickListener {
+public class CreateCardTokenActivity extends Activity implements View.OnClickListener {
 
     private Spinner documentTypeSpinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_token_creation);
+        setContentView(R.layout.activity_create_card_token);
 
         this.documentTypeSpinner = (Spinner) this.findViewById(R.id.document_type);
 
@@ -47,7 +47,7 @@ public class TokenCreationActivity extends Activity implements View.OnClickListe
 
         Uri capptaAppLink = new Uri.Builder()
                 .scheme("cappta")
-                .authority("token-creation")
+                .authority("create-card-token")
                 .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
                 .appendQueryParameter("name", customerName.getText().toString())
                 .appendQueryParameter("document", customerDocument.getText().toString())

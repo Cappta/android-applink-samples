@@ -10,14 +10,14 @@ import android.widget.Toast;
 
 import com.cappta.applinksample.R;
 
-public class ResultPaymentWithTokenCreation extends Activity implements View.OnClickListener {
+public class ResultCreditPaymentAndCreateCardToken extends Activity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         try
         {
             super.onCreate(savedInstanceState);
-            this.setContentView(R.layout.activity_payment_with_token_creation_result);
+            this.setContentView(R.layout.activity_result_credit_payment_and_create_card_token);
 
             Uri appLinkUri = Uri.parse(this.getIntent().getDataString());
 

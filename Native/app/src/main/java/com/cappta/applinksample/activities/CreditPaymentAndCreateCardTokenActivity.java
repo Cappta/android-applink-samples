@@ -15,7 +15,7 @@ import com.cappta.applinksample.model.DocumentType;
 import com.cappta.applinksample.model.InstallmentType;
 import com.cappta.applinksample.model.PaymentType;
 
-public class PaymentWithTokenCreationActivity extends Activity implements View.OnClickListener {
+public class CreditPaymentAndCreateCardTokenActivity extends Activity implements View.OnClickListener {
 
     private Spinner installmentTypeSpinner;
 
@@ -24,7 +24,7 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_payment_with_token_creation);
+        setContentView(R.layout.activity_credit_payment_and_create_card_token);
 
         this.installmentTypeSpinner = (Spinner)this.findViewById(R.id.installment_type);
         installmentTypeSpinner.setAdapter(new ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, InstallmentType.values()));
@@ -70,7 +70,7 @@ public class PaymentWithTokenCreationActivity extends Activity implements View.O
 
         Uri capptaAppLink = new Uri.Builder()
                 .scheme("cappta")
-                .authority("payment-and-token-creation")
+                .authority("credit-payment-and-create-card-token")
                 .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
                 .appendQueryParameter("paymentId", paymentId.getText().toString())
                 .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))

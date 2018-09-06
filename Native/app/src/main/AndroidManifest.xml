@@ -37,12 +37,15 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.TokenizationActivity"/>
+        <activity android:name=".activities.TokenizationMenuActivity"/>
 
-        <activity android:name=".activities.TokenPaymentReversalActivity"/>
-        <activity android:name=".activities.TokenCreationActivity"/>
+        <activity android:name=".activities.CreditPaymentAndCreateCardTokenActivity"/>
+
+        <activity android:name=".activities.CreateCardTokenActivity"/>
 
         <activity android:name=".activities.TokenPaymentActivity"/>
+
+        <activity android:name=".activities.TokenPaymentReversalActivity"/>
 
         <activity android:name=".activities.ResultActivity">
             <intent-filter>
@@ -60,12 +63,8 @@
                 <data
                     android:host="receipt-reprint"
                     android:scheme="applinksample" />
-
-
             </intent-filter>
         </activity>
-
-        <activity android:name=".activities.PaymentWithTokenCreationActivity"/>
 
         <activity android:name=".activities.ResultTokenization">
             <intent-filter>
@@ -75,12 +74,20 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
+                    android:host="create-card-token"
+                    android:scheme="applinksample" />
+
+                <data
                     android:host="token-payment"
+                    android:scheme="applinksample" />
+
+                <data
+                    android:host="token-payment-reversal"
                     android:scheme="applinksample" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".activities.ResultPaymentWithTokenCreation">
+        <activity android:name=".activities.ResultCreditPaymentAndCreateCardToken">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -88,11 +95,9 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:host="payment-and-token-creation"
+                    android:host="credit-payment-and-create-card-token"
                     android:scheme="applinksample" />
             </intent-filter>
         </activity>
-
     </application>
-
 </manifest>

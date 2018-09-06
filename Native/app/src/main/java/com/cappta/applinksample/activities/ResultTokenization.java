@@ -17,7 +17,7 @@ public class ResultTokenization extends Activity implements View.OnClickListener
         try
         {
             super.onCreate(savedInstanceState);
-            this.setContentView(R.layout.activity_tokenization_result);
+            this.setContentView(R.layout.activity_result_tokenization);
 
             Uri appLinkUri = Uri.parse(this.getIntent().getDataString());
 

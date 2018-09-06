@@ -48,7 +48,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivity(ConfigurationActivity.class);
                 break;
             case R.id.button_tokenization:
-                startActivity(TokenizationActivity.class);
+                startActivity(TokenizationMenuActivity.class);
                 break;
         }
     }

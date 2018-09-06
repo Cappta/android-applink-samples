@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tols:context="com.cappta.applinksample.activities.PaymentWithTokenCreationActivity">
+    tols:context="com.cappta.applinksample.activities.CreditPaymentAndCreateCardTokenActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Nome"
+                android:text="@string/label_customer_name"
                 android:textSize="20dp" />
 
             <EditText
@@ -84,14 +84,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:ems="10"
-                android:inputType="textEmailAddress|textPersonName"
-                android:text="daniel"
+                android:inputType="textPersonName"
                 android:textSize="18sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Email"
+                android:text="@string/label_customer_email"
                 android:textSize="20dp" />
 
             <EditText
@@ -99,9 +98,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:ems="10"
-                android:inputType="textPersonName"
-                android:text="dlessio@stone.com.br"
+                android:inputType="text"
                 android:textSize="18sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/label_customer_document_type"
+                android:textSize="20dp" />
+
+            <Spinner
+                android:id="@+id/document_type"
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -114,19 +123,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:ems="10"
-                android:inputType="textPersonName|number"
-                android:text="12345678910" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tipo do Documento"
-                android:textSize="20dp" />
-
-            <Spinner
-                android:id="@+id/document_type"
-                android:layout_width="match_parent"
-                android:layout_height="60dp" />
+                android:inputType="number" />
 
             <Button
                 android:id="@+id/button_send_credit_payment"

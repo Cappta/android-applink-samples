@@ -10,30 +10,30 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.cappta.applinksample.activities.TokenizationActivity">
+    tools:context="com.cappta.applinksample.activities.TokenizationMenuActivity">
 
     <Button
-        android:id="@+id/button_payment_with_token_creation"
-        android:layout_height="60dp"
+        android:id="@+id/button_credit-payment-and-create-card-token"
         android:layout_width="match_parent"
-        android:text="@string/button_payment_with_token_creation" />
+        android:layout_height="60dp"
+        android:text="@string/button_credit_payment_and_create_card_token" />
 
     <Button
-        android:id="@+id/button_token_creation"
-        android:layout_height="60dp"
+        android:id="@+id/button_create-card-token"
         android:layout_width="match_parent"
-        android:text="@string/button_token_creation" />
+        android:layout_height="60dp"
+        android:text="@string/button_create_card_token" />
 
     <Button
-        android:id="@+id/button_token_payment"
-        android:layout_height="60dp"
+        android:id="@+id/button_token-payment"
         android:layout_width="match_parent"
-        android:text="@string/button_token_payment_transaction" />
+        android:layout_height="60dp"
+        android:text="@string/button_token_payment" />
 
     <Button
         android:id="@+id/button_token_payment_reversal"
         android:layout_height="60dp"
         android:layout_width="match_parent"
-        android:text="@string/button_token_cancellation_transaction" />
+        android:text="@string/button_token_payment_reversal" />
 
 </LinearLayout>

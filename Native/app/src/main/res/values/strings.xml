@@ -48,27 +48,31 @@
     <string name="button_back">Voltar</string>
     <string name="title_activity_configuration">ConfigurationActivity</string>
 
-    <!-- activity_tokenization-->
+    <!-- activity_tokenization_menu-->
 
     <string name="button_tokenization">Tokenização</string>
-    <string name="button_payment_with_token_creation">Pagamento com criação de token</string>
-    <string name="button_token_creation">Criação de token</string>
-    <string name="button_token_payment_transaction">Pagamento com token</string>
-    <string name="button_token_cancellation_transaction">Cancelar transação com token</string>
+    <string name="button_credit_payment_and_create_card_token">Pagamento com criação de token</string>
+    <string name="button_create_card_token">Criação de token</string>
+    <string name="button_token_payment">Pagamento com token</string>
+    <string name="button_token_payment_reversal">Cancelar transação com token</string>
 
-    <!--activity_token_creation-->
+    <!-- activity_credit_payment_and_create_card_token_result-->
+    <string name="label_card_last_four_digits">Final do cartão</string>
+    <string name="label_card_brand">Bandeira</string>
+    <string name="label_exp_month">Mês expiração</string>
+    <string name="label_exp_year">Ano expiração</string>
+    <string name="label_customer">Dados portador</string>
 
+    <!--activity_create_card_token-->
     <string name="label_customer_name">Nome do Cliente</string>
-    <string name="label_document_type">Tipo do documento</string>
-    <string name="document_type">CPF ou CNPJ do cliente</string>
-    <string name="label_customer_email">Email</string>
+    <string name="label_customer_document_type">Tipo do documento</string>
+    <string name="label_customer_document">Número do documento</string>
+    <string name="label_customer_email">E-mail</string>
 
     <!--activity_token_payment-->
-
     <string name="label_card_token">Token do Cartão</string>
     <string name="label_order_id">Código do Pedido</string>
     <string name="label_customer_id">Código do Cliente</string>
-
 
     <!--activity_tokenization_result -->
     <string name="label_payment_key">Identificação da transação (Payment key)</string>
@@ -76,13 +80,6 @@
     <string name="label_acquirer_nsu">NSU Adquirente</string>
     <string name="label_card_brand_name">Bandeira</string>
     <string name="label_status">Status</string>
-
-    <!-- activity_payment_with_token_cration_result-->
-    <string name="label_card_last_four_digits">Final do cartão</string>
-    <string name="label_card_brand">Bandeira</string>
-    <string name="label_exp_month">Mês expiração</string>
-    <string name="label_exp_year">Ano expiração</string>
-    <string name="label_customer">Dados portador</string>
 
     <!-- Execute Operation Button-->
     <string name="execute_operation_button">Executar Operação</string>

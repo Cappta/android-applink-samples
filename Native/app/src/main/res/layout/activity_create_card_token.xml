@@ -9,7 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="com.cappta.applinksample.activities.TokenCreationActivity">
+    tools:context="com.cappta.applinksample.activities.CreateCardTokenActivity">
 
     <TextView
         android:text="@string/label_customer_name"
@@ -24,7 +24,19 @@
         android:layout_height="60dp"/>
 
     <TextView
-        android:text="@string/label_document_type"
+        android:text="@string/label_customer_email"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/customer_Email"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:inputType="text" />
+
+    <TextView
+        android:text="@string/label_customer_document_type"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -36,7 +48,7 @@
         android:prompt="@string/prompt_installment_type" />
 
     <TextView
-        android:text="@string/document_type"
+        android:text="@string/label_customer_document"
         android:textSize="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -48,18 +60,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         />
-
-    <TextView
-        android:text="@string/label_customer_email"
-        android:textSize="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <EditText
-        android:id="@+id/customer_Email"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:inputType="text" />
 
     <Button
         android:id="@+id/executeCreateToken"
