@@ -67,8 +67,9 @@
     <string name="label_order_id">Código do Pedido</string>
     <string name="label_customer_id">Código do Cliente</string>
 
+
     <!--activity_tokenization_result -->
-    <string name="label_payment_key">Identificação da transação</string>
+    <string name="label_payment_key">Identificação da transação (Payment key)</string>
     <string name="label_acquirer_name">Adquirente</string>
     <string name="label_acquirer_nsu">NSU Adquirente</string>
     <string name="label_card_brand_name">Bandeira</string>
