@@ -39,6 +39,7 @@
 
         <activity android:name=".activities.TokenizationActivity"/>
 
+        <activity android:name=".activities.TokenPaymentReversalActivity"/>
         <activity android:name=".activities.TokenCreationActivity"/>
 
         <activity android:name=".activities.TokenPaymentActivity"/>
@@ -59,6 +60,8 @@
                 <data
                     android:host="receipt-reprint"
                     android:scheme="applinksample" />
+
+
             </intent-filter>
         </activity>
 

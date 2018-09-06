@@ -31,7 +31,7 @@
         android:text="@string/button_token_payment_transaction" />
 
     <Button
-        android:id="@+id/button_cancel_token_payment"
+        android:id="@+id/button_token_payment_reversal"
         android:layout_height="60dp"
         android:layout_width="match_parent"
         android:text="@string/button_token_cancellation_transaction" />
