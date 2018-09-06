@@ -15,11 +15,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/token_payment_reversal"
+        android:text="@string/label_payment_key"
         android:textSize="20dp" />
 
     <EditText
-        android:id="@+id/token_payment_reversal_key"
+        android:id="@+id/payment_key"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:inputType="text" />
@@ -29,5 +29,4 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:text="@string/execute_operation_button" />
-
 </LinearLayout>

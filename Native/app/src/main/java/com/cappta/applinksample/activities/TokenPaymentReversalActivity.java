@@ -28,7 +28,7 @@ public class TokenPaymentReversalActivity extends Activity implements View.OnCli
     }
 
     public void SendTokenPaymentReversalRequest(){
-        EditText tokenPaymentReversalKey = (EditText) this.findViewById(R.id.token_payment_reversal_key);
+        EditText tokenPaymentReversalKey = (EditText) this.findViewById(R.id.payment_key);
 
         Uri capptaAppLink = new Uri.Builder()
                 .scheme("cappta")
