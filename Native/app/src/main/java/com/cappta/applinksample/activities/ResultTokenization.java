@@ -41,26 +41,23 @@ public class ResultTokenization extends Activity implements View.OnClickListener
     }
 
     private void showTokenPaymentResponse(Uri appLinkUri) {
-        TextView cupomLojista = (TextView) this.findViewById(R.id.via_lojista);
-        cupomLojista.setText(appLinkUri.getQueryParameter("merchantReceipt"));
+        TextView paymentKey = (TextView) this.findViewById(R.id.payment_key);
+        paymentKey.setText(appLinkUri.getQueryParameter("paymentKey"));
 
-        TextView cupomCliente = (TextView) this.findViewById(R.id.via_cliente);
-        cupomCliente.setText(appLinkUri.getQueryParameter("customerReceipt"));
-
-        TextView cardToken = (TextView) this.findViewById(R.id.card_token);
-        cardToken.setText(appLinkUri.getQueryParameter("cardToken"));
-
-        TextView lastDigits = (TextView) this.findViewById(R.id.card_last_digits);
-        lastDigits.setText(appLinkUri.getQueryParameter("cardLastDigits"));
+        TextView acquirerName = (TextView) this.findViewById(R.id.acquirer_name);
+        acquirerName.setText(appLinkUri.getQueryParameter("acquirerName"));
 
         TextView cardBrandName = (TextView) this.findViewById(R.id.card_brand_name);
         cardBrandName.setText(appLinkUri.getQueryParameter("cardBrandName"));
 
-        TextView cardMonthExp = (TextView) this.findViewById(R.id.card_month_exp);
-        cardMonthExp.setText(appLinkUri.getQueryParameter("cardMonthExp"));
+        TextView acquirerUniqueSequentialNumber = (TextView) this.findViewById(R.id.acquirer_unique_sequential_number);
+        acquirerUniqueSequentialNumber.setText(appLinkUri.getQueryParameter("acquirerUniqueSequentialNumber"));
 
-        TextView cardYearExp = (TextView) this.findViewById(R.id.card_year_exp);
-        cardYearExp.setText(appLinkUri.getQueryParameter("cardYearExp"));
+        TextView status = (TextView) this.findViewById(R.id.status);
+        status.setText(appLinkUri.getQueryParameter("status"));
+
+        TextView amount = (TextView) this.findViewById(R.id.amount);
+        amount.setText(appLinkUri.getQueryParameter("amount"));
     }
 
     @Override
