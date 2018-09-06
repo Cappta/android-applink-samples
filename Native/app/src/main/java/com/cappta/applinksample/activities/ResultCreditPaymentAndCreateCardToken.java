@@ -48,24 +48,21 @@ public class ResultCreditPaymentAndCreateCardToken extends Activity implements V
         cupomCliente.setText(appLinkUri.getQueryParameter("customerReceipt"));
 
         TextView cardToken = (TextView) this.findViewById(R.id.card_token);
-        cardToken.setText(appLinkUri.getQueryParameter("card_token"));
-
-        TextView cardLastDigits = (TextView) this.findViewById(R.id.card_last_digits);
-        cardLastDigits.setText(appLinkUri.getQueryParameter("customer_card_last_four_digits"));
+        cardToken.setText(appLinkUri.getQueryParameter("cardToken"));
 
         TextView cardBrandName = (TextView) this.findViewById(R.id.card_brand_name);
-        cardBrandName.setText(appLinkUri.getQueryParameter("card_brand_name"));
+        cardBrandName.setText(appLinkUri.getQueryParameter("cardBrandName"));
 
         TextView cardMonthExp = (TextView) this.findViewById(R.id.card_month_exp);
-        cardMonthExp.setText(appLinkUri.getQueryParameter("card_month_exp"));
+        cardMonthExp.setText(appLinkUri.getQueryParameter("cardMonthExp"));
 
         TextView cardYearExp = (TextView) this.findViewById(R.id.card_year_exp);
-        cardYearExp.setText(appLinkUri.getQueryParameter("card_year_exp"));
+        cardYearExp.setText(appLinkUri.getQueryParameter("cardYearExp"));
 
-        String customerNameValue = appLinkUri.getQueryParameter("customer_name");
-        String customerEmailValue = appLinkUri.getQueryParameter("customer_email");
-        String customerDocNumbervalue = appLinkUri.getQueryParameter("customer_doc_number");
-        String customerDocTypeValue = appLinkUri.getQueryParameter("customer_doc_type");
+        String customerNameValue = appLinkUri.getQueryParameter("customerName");
+        String customerEmailValue = appLinkUri.getQueryParameter("customerEmail");
+        String customerDocNumbervalue = appLinkUri.getQueryParameter("customerDocument");
+        String customerDocTypeValue = appLinkUri.getQueryParameter("customerDocumentType");
 
         String customerDetails =  customerNameValue
                 .concat("\n")

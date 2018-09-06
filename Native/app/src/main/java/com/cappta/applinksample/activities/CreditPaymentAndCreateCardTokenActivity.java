@@ -13,7 +13,6 @@ import android.widget.Spinner;
 import com.cappta.applinksample.R;
 import com.cappta.applinksample.model.DocumentType;
 import com.cappta.applinksample.model.InstallmentType;
-import com.cappta.applinksample.model.PaymentType;
 
 public class CreditPaymentAndCreateCardTokenActivity extends Activity implements View.OnClickListener {
 
@@ -38,15 +37,10 @@ public class CreditPaymentAndCreateCardTokenActivity extends Activity implements
 
     @Override
     public void onClick(View view) {
-
-        switch (view.getId()) {
-            case R.id.button_send_credit_payment:
-                SendPayment(PaymentType.CREDIT);
-                break;
-        }
+        SendPayment();
     }
 
-    private void SendPayment(PaymentType paymentType){
+    private void SendPayment(){
         EditText paymentId = (EditText)this.findViewById(R.id.payment_id);
 
         EditText paymentAmountInput = (EditText)this.findViewById(R.id.payment_amount);
@@ -74,19 +68,18 @@ public class CreditPaymentAndCreateCardTokenActivity extends Activity implements
                 .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
                 .appendQueryParameter("paymentId", paymentId.getText().toString())
                 .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
-                .appendQueryParameter("paymentType", paymentType.getValue())
                 .appendQueryParameter("installments", installments.getText().toString())
                 .appendQueryParameter("installmentType", Integer.toString(installmentType.getValue()))
                 .appendQueryParameter("cardholderName", cardholderName)
                 .appendQueryParameter("cardholderEmail", cardholderEmail)
                 .appendQueryParameter("cardholderDocument", cardholderDocument)
-                .appendQueryParameter("documentType", documentType.toString())
+                .appendQueryParameter("documentType", documentType.getValue())
                 .appendQueryParameter("scheme", getString(R.string.app_scheme))
                 .build();
 
         Intent capptaIntent = new Intent(Intent.ACTION_VIEW, capptaAppLink);
 
-        this.startActivityForResult(capptaIntent,  0);
+        this.startActivityForResult(capptaIntent,0);
     }
 
 }

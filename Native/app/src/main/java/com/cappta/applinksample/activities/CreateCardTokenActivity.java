@@ -51,7 +51,7 @@ public class CreateCardTokenActivity extends Activity implements View.OnClickLis
                 .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
                 .appendQueryParameter("name", customerName.getText().toString())
                 .appendQueryParameter("document", customerDocument.getText().toString())
-                .appendQueryParameter("documentType", documentType.toString())
+                .appendQueryParameter("documentType", documentType.getValue())
                 .appendQueryParameter("email", customerEmail.getText().toString())
                 .appendQueryParameter("scheme", getString(R.string.app_scheme))
                 .build();
