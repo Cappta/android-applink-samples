@@ -59,21 +59,17 @@ public class ResultCreditPaymentAndCreateCardToken extends Activity implements V
         TextView cardYearExp = (TextView) this.findViewById(R.id.card_year_exp);
         cardYearExp.setText(appLinkUri.getQueryParameter("cardYearExp"));
 
-        String customerNameValue = appLinkUri.getQueryParameter("customerName");
-        String customerEmailValue = appLinkUri.getQueryParameter("customerEmail");
-        String customerDocNumbervalue = appLinkUri.getQueryParameter("customerDocument");
-        String customerDocTypeValue = appLinkUri.getQueryParameter("customerDocumentType");
+        TextView customerId = (TextView) this.findViewById(R.id.customer_id);
+        customerId.setText(appLinkUri.getQueryParameter("customerId"));
 
-        String customerDetails =  customerNameValue
-                .concat("\n")
-                .concat(customerEmailValue)
-                .concat("\n")
-                .concat(customerDocNumbervalue)
-                .concat("\n")
-                .concat(customerDocTypeValue);
+        TextView customerName = (TextView) this.findViewById(R.id.customer_name);
+        customerName.setText(appLinkUri.getQueryParameter("customerName"));
 
-        TextView customer = (TextView) this.findViewById(R.id.customer_data);
-        customer.setText(customerDetails);
+        TextView customerDocumentType = (TextView) this.findViewById(R.id.customer_document_type);
+        customerDocumentType.setText(appLinkUri.getQueryParameter("customerDocumentType"));
+
+        TextView customerDocument = (TextView) this.findViewById(R.id.customer_document);
+        customerDocument.setText(appLinkUri.getQueryParameter("customerDocument"));
     }
 
     @Override

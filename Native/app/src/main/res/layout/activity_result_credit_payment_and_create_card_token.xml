@@ -50,7 +50,8 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="@string/label_card_token" />
+                android:layout_marginTop="20dp"
+                android:text="@string/label_card_token" />
 
             <TextView
                 android:id="@+id/card_token"
@@ -94,10 +95,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="@string/label_customer" />
+                android:text="@string/label_customer_id" />
 
             <TextView
-                android:id="@+id/customer_data"
+                android:id="@+id/customer_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/label_customer_document_type" />
+
+            <TextView
+                android:id="@+id/customer_document_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/label_customer_document" />
+
+            <TextView
+                android:id="@+id/customer_document"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/label_customer_name" />
+
+            <TextView
+                android:id="@+id/customer_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
