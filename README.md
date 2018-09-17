@@ -8,6 +8,7 @@ This sample explain how to integrate with Cappta applink solution
 - Payment
 - Reversal
 - Print receipt
+- Card token operations
 
 ---
 ### License
