@@ -29,6 +29,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         Button buttonTokenization = (Button)this.findViewById(R.id.button_tokenization);
         buttonTokenization.setOnClickListener(this);
+
+        Button buttonMulticnpj = (Button)this.findViewById(R.id.button_multicnpj);
+        buttonMulticnpj.setOnClickListener(this);
     }
 
     @Override
@@ -49,6 +52,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.button_tokenization:
                 startActivity(TokenizationMenuActivity.class);
+                break;
+            case R.id.button_multicnpj:
+                startActivity(MulticnpjActivity.class);
                 break;
         }
     }

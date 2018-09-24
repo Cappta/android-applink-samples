@@ -4,14 +4,12 @@
     <string name="cappta_auth_key">2C1CE88C-6A0C-4FA6-BF2D-519B1DB31DF4</string>
 
     <!-- activity_main -->
-
     <string name="button_payment">Realizar Pagamento</string>
     <string name="button_receipt_reprint">Realizar Reimpressão</string>
     <string name="button_payment_reversal">Realizar Estorno de Pagamento</string>
     <string name="button_configuration">Realizar Configuração do PDV</string>
 
     <!-- activity_payment -->
-
     <string name="label_payment_amount">Valor do pagamento:</string>
     <string name="label_payment_id">Id do pagamento:</string>
     <string name="label_installments">Qtd. Parcelas:</string>
@@ -22,34 +20,28 @@
     <string name="button_send_debit_payment">Pagamento Débito</string>
 
     <!-- activity_payment_reversal -->
-
     <string name="label_administrative_code">Número de Controle</string>
     <string name="label_administrative_password">Senha administrativa</string>
     <string name="button_send_reversal">Enviar Cancelamento</string>
 
     <!-- activity_receipt_reprint -->
-
     <string name="button_reprint_specific">Reimprimir Específico</string>
     <string name="button_reprint_last_receipt">Reimprimir o Último</string>
 
     <!-- activity_configuration -->
-
     <string name="label_cnpj">CNPJ</string>
     <string name="label_checkout_number">PDV</string>
     <string name="button_send_configuration">Configurar PDV</string>
 
     <!-- activity_result -->
-
     <string name="label_operation_completed">Operação Concluída!</string>
 
     <!-- generic messages -->
-
     <string name="label_request_id">Id do requisição:</string>
     <string name="button_back">Voltar</string>
     <string name="title_activity_configuration">ConfigurationActivity</string>
 
     <!-- activity_tokenization_menu-->
-
     <string name="button_tokenization">Tokenização</string>
     <string name="button_credit_payment_and_create_card_token">Pagamento com criação de token</string>
     <string name="button_create_card_token">Criação de token</string>
@@ -80,6 +72,13 @@
     <string name="label_acquirer_nsu">NSU Adquirente</string>
     <string name="label_card_brand_name">Bandeira</string>
     <string name="label_status">Status</string>
+
+    <!--activity_multicnpj -->
+    <string name="button_multicnpj">Multiloja</string>
+    <string name="label_multicnpj">Multiloja</string>
+    <string name="label_cnpj_spinner">Lista de CNPJs disponíveis</string>
+    <string name="button_cnpj_fetch">Buscar CNPJs</string>
+    <string name="button_cnpj_activation">ATIVAR CNPJ</string>
 
     <!-- Execute Operation Button-->
     <string name="execute_operation_button">Executar Operação</string>
