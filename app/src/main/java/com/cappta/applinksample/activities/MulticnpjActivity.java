@@ -8,11 +8,11 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.cappta.applinksample.R;
 
 import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -64,6 +64,10 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
                 case "get-cnpj-list":
                     this.displayCheckoutList(appLinkUri);
                     break;
+
+                case "swap-active-checkout":
+                    this.displayActivationMessage(appLinkUri);
+                    break;
             }
         }
         catch(Exception e){
@@ -85,6 +89,27 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
 
     private void createActivateCheckoutRequest(){
 
+        Spinner spin = (Spinner)this.findViewById(R.id.spinner_cnpj_list);
+        String text = spin.getSelectedItem().toString();
+
+        if(text == null || text.isEmpty())
+            return;
+
+        String[] checkoutData = text.split(":");
+        String merchantCnpj = checkoutData[1];
+        String checkoutNumber = checkoutData[2];
+
+        Uri capptaAppLink = new Uri.Builder()
+                .scheme("cappta")
+                .authority("swap-active-checkout")
+                .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
+                .appendQueryParameter("cnpj", merchantCnpj)
+                .appendQueryParameter("checkout-number", checkoutNumber)
+                .appendQueryParameter("scheme", getString(R.string.app_scheme))
+                .build();
+
+        Intent capptaIntent = new Intent(Intent.ACTION_VIEW, capptaAppLink);
+        this.startActivityForResult(capptaIntent, 0);
     }
 
     private void displayCheckoutList(Uri uri){
@@ -95,7 +120,9 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
             ArrayList<String> cnpjList = new ArrayList<String>();
 
             for (int i = 0; i < jarray.length(); i++) {
-                cnpjList.add(jarray.getJSONObject(i).getString("merchant_cnpj"));
+                cnpjList.add(jarray.getJSONObject(i).getString("trading_name") + ": " +
+                             jarray.getJSONObject(i).getString("merchant_cnpj") + ": " +
+                             jarray.getJSONObject(i).getString("checkout_number"));
             }
 
             Spinner spin = (Spinner)this.findViewById(R.id.spinner_cnpj_list);
@@ -107,4 +134,22 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
             String msg = e.getMessage();
         }
     }
+
+    private void displayActivationMessage(Uri appLinkUri){
+        String responseCode = appLinkUri.getQueryParameter("responseCode");
+        if (responseCode.equals("0")) {
+            String merchantCompanyName = appLinkUri.getQueryParameter("merchant_company_name");
+            String merchantCnpj = appLinkUri.getQueryParameter("cnpj");
+            String checkoutNumber = appLinkUri.getQueryParameter("checkout_number");
+
+            String msg = "Loja " + merchantCompanyName + " ativada e pronta para transacionar.\n" +
+                    "CNPJ: " + merchantCnpj + "\n" +
+                    "PDV: " + checkoutNumber + ".";
+
+            Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
+        }
+        else {
+        }
+    }
+
 }
