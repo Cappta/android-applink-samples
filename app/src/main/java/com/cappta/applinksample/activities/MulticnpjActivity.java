@@ -148,8 +148,6 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
 
             Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
         }
-        else {
-        }
     }
 
 }
