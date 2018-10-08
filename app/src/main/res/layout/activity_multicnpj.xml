@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tols="http://schemas.android.com/tools"
+    android:id="@+id/activity_multicnpj"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    tols:context="com.cappta.applinksample.activities.MulticnpjActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/label_multicnpj"
+        android:textAlignment="center"
+        android:textSize="26sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:text="@string/label_cnpj_spinner"
+        android:textSize="20sp" />
+
+    <Spinner
+        android:id="@+id/spinner_cnpj_list"
+        android:layout_width="match_parent"
+        android:layout_height="38dp" />
+
+    <Button
+        android:id="@+id/button_fetch_checkout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/button_cnpj_fetch" />
+
+    <Button
+        android:id="@+id/button_activate_selected_cnpj"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:text="@string/button_cnpj_activation" />
+</LinearLayout>

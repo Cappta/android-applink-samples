@@ -99,5 +99,22 @@
                     android:scheme="applinksample" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".activities.MulticnpjActivity"
+                  android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data
+                    android:host="get-cnpj-list"
+                    android:scheme="applinksample"/>
+                <data
+                    android:host="swap-active-checkout"
+                    android:scheme="applinksample"/>
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
