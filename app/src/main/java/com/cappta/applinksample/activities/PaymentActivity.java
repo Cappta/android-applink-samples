@@ -54,6 +54,8 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
         float paymentAmount = Float.parseFloat(paymentAmountInput.getText().toString());
         int paymentAmountInCents = Math.round(paymentAmount * 100);
 
+        EditText cnpj = (EditText)this.findViewById(R.id.cnpj);
+
         EditText installments = (EditText)this.findViewById(R.id.installments);
 
         InstallmentType installmentType = (InstallmentType)this.installmentTypeSpinner.getSelectedItem();
@@ -64,6 +66,7 @@ public class PaymentActivity extends Activity implements View.OnClickListener {
             .appendQueryParameter("authKey", getString(R.string.cappta_auth_key))
             .appendQueryParameter("paymentId", paymentId.getText().toString())
             .appendQueryParameter("amount", Integer.toString(paymentAmountInCents))
+            .appendQueryParameter("cnpj", cnpj.getText().toString())
             .appendQueryParameter("paymentType", paymentType.getValue())
             .appendQueryParameter("installments", installments.getText().toString())
             .appendQueryParameter("installmentType", Integer.toString(installmentType.getValue()))

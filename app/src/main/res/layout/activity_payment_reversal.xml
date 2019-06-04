@@ -10,6 +10,16 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.cappta.applinksample.activities.PaymentReversalActivity">
+
+    <EditText
+        android:id="@+id/cnpj"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="@string/label_cnpj"
+        android:text="" />
+
+
     <EditText
         android:id="@+id/administrative_code"
         android:inputType="number"

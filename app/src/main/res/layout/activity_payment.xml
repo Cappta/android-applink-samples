@@ -39,6 +39,19 @@
         android:text="1.00" />
 
     <TextView
+        android:text="@string/label_cnpj"
+        android:textSize="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/cnpj"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:text="" />
+
+    <TextView
         android:text="@string/label_installments"
         android:textSize="20dp"
         android:layout_width="match_parent"

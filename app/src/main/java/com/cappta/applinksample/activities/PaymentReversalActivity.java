@@ -28,11 +28,15 @@ public class PaymentReversalActivity extends Activity implements View.OnClickLis
 
     @Override
     public void onClick(View view) {
+
+        EditText cnpj = (EditText)this.findViewById(R.id.cnpj);
+
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("cappta");
         builder.authority("payment-reversal");
         builder.appendQueryParameter("authKey", getString(R.string.cappta_auth_key));
         builder.appendQueryParameter("scheme", getString(R.string.app_scheme));
+        builder.appendQueryParameter("cnpj", cnpj.getText().toString());
 
         EditText administrativeCode = (EditText)this.findViewById(R.id.administrative_code);
         builder.appendQueryParameter("administrativeCode", administrativeCode.getText().toString());

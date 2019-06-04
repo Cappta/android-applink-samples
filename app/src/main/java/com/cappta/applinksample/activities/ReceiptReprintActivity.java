@@ -31,11 +31,15 @@ public class ReceiptReprintActivity extends Activity implements View.OnClickList
 
     @Override
     public void onClick(View view) {
+
+        EditText cnpj = (EditText)this.findViewById(R.id.cnpj);
+
         Uri.Builder builder = new Uri.Builder();
         builder.scheme("cappta");
         builder.authority("receipt-reprint");
         builder.appendQueryParameter("authKey", getString(R.string.cappta_auth_key));
         builder.appendQueryParameter("scheme", getString(R.string.app_scheme));
+        builder.appendQueryParameter("cnpj", cnpj.getText().toString());
 
         if (view.getId() == R.id.button_reprint_last_receipt) {
             builder.path("last");
