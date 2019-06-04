@@ -31,9 +31,6 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
          Button sendFetchCheckout = (Button)this.findViewById(R.id.button_fetch_checkout);
          sendFetchCheckout.setOnClickListener(this);
 
-         Button sendActivateCheckout = (Button)this.findViewById(R.id.button_activate_selected_cnpj);
-         sendActivateCheckout.setOnClickListener(this);
-
          onNewIntent(getIntent());
     }
 
@@ -43,9 +40,6 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
          {
              case R.id.button_fetch_checkout:
                  createGetCheckoutUriRequest();
-                 break;
-             case R.id.button_activate_selected_cnpj:
-                 createActivateCheckoutRequest();
                  break;
          }
     }
@@ -63,10 +57,6 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
             {
                 case "get-cnpj-list":
                     this.displayCheckoutList(appLinkUri);
-                    break;
-
-                case "swap-active-checkout":
-                    this.displayActivationMessage(appLinkUri);
                     break;
             }
         }
@@ -132,21 +122,6 @@ public class MulticnpjActivity extends Activity implements View.OnClickListener 
         }
         catch (Exception e){
             String msg = e.getMessage();
-        }
-    }
-
-    private void displayActivationMessage(Uri appLinkUri){
-        String responseCode = appLinkUri.getQueryParameter("responseCode");
-        if (responseCode.equals("0")) {
-            String merchantCompanyName = appLinkUri.getQueryParameter("merchant_company_name");
-            String merchantCnpj = appLinkUri.getQueryParameter("cnpj");
-            String checkoutNumber = appLinkUri.getQueryParameter("checkout_number");
-
-            String msg = "Loja " + merchantCompanyName + " ativada e pronta para transacionar.\n" +
-                    "CNPJ: " + merchantCnpj + "\n" +
-                    "PDV: " + checkoutNumber + ".";
-
-            Toast.makeText(this, msg, Toast.LENGTH_LONG).show();
         }
     }
 
